@@ -2,7 +2,7 @@ name: Deploy to GitHub
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Her 5 dakikada bir deploy işlemini gerçekleştirir
+    - cron: '0 * * * *' # Saatte bir kez deploy işlemini gerçekleştirir
 
 jobs:
   deploy:
@@ -32,3 +32,6 @@ jobs:
       run: |
         git config --global user.email "info@hafsa.de"
         git config --global user.name "hafsa1319"
+        git add .
+        git commit -m "Update files from FTP"
+        git push
