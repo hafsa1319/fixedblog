@@ -26,14 +26,9 @@ jobs:
       run: pip install ftputil
 
     - name: Download files from FTP
-      run: |
-        import ftputil
-        with ftputil.FTPHost('64.226.120.146', 'hafsa1319', 'meleK1319') as host:
-          host.download_if_newer('/httpdocs', 'httpdocs')
+      run: python download_files.py
+
     - name: Commit and push changes
       run: |
         git config --global user.email "info@hafsa.de"
         git config --global user.name "hafsa1319"
-        git add .
-        git commit -m "Update files from FTP"
-        git push
