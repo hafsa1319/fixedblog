@@ -23,13 +23,13 @@ jobs:
     - name: Download files from FTP
       run: |
         import ftputil
-        with ftputil.FTPHost('ftp.example.com', 'username', 'password') as host:
+        with ftputil.FTPHost('64.226.120.146', 'hafsa1319', 'meleK1319') as host:
           host.download_if_newer('remote_path', 'local_path')
 
     - name: Commit and push changes
       run: |
-        git config --global user.email "your_email@example.com"
-        git config --global user.name "Your Name"
+        git config --global user.email "info@hafsa.de"
+        git config --global user.name "hafsa1319"
         git add .
         git commit -m "Update files from FTP"
         git push
