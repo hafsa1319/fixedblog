@@ -24,7 +24,7 @@ jobs:
       run: |
         import ftputil
         with ftputil.FTPHost('64.226.120.146', 'hafsa1319', 'meleK1319') as host:
-          host.download_if_newer('remote_path', 'local_path')
+          host.download_if_newer('/httpdocs', '.')
 
     - name: Commit and push changes
       run: |
