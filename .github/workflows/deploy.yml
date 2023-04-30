@@ -10,15 +10,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: 16
 
     - name: Setup Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: 3.x
 
@@ -30,7 +30,6 @@ jobs:
         import ftputil
         with ftputil.FTPHost('64.226.120.146', 'hafsa1319', 'meleK1319') as host:
           host.download_if_newer('/httpdocs', 'httpdocs')
-
     - name: Commit and push changes
       run: |
         git config --global user.email "info@hafsa.de"
