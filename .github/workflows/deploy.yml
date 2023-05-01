@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }} # Bu satırı ekleyin
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -34,4 +36,4 @@ jobs:
         git config --global user.name "hafsa1319"
         git add .
         git commit -m "Update files from FTP"
-        git push
+        git push origin HEAD:main # Bu satırı düzenleyin
